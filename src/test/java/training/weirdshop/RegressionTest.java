@@ -28,7 +28,7 @@ public class RegressionTest {
 
         String expected =  new Scanner(getClass().getResourceAsStream("/expected-output.txt"), "UTF-8").useDelimiter("\\A").next();
 
-        assertThat(output).isEqualTo(expected);
+        assertThat(output).isEqualToNormalizingNewlines(expected);
     }
 
     private void addItems(StringBuilder sb, int step, Item[] items) {
